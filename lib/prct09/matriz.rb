@@ -1,6 +1,6 @@
 require './lib/prct09/racional.rb'
 
-module prct09
+module Prct09
   class Matriz
     attr_reader :filas, :columnas
     attr_accessor :pos
