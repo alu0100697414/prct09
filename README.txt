@@ -1,15 +1,7 @@
-Considere el desarrollo de una aplicación que contemple la creación de Matrices. Se ha de utilizar una representación para matrices densas y otra diferente para matrices dispersas. Una matriz se considerará dispersa si tiene más de un 60% de ceros. Se ha de establecer una relación de herencia entre las clases que se utilicen para su representación. Las operaciones básicas con matrices son diferentes en cada caso.
-El entregable de esta práctica tiene que ser una Gema Ruby. Para su creación se ha de utilizar la herramienta Bundler(http://gembundler.com/)
-1.- Utilizar bundle para crear la estructura estándar de una gema.
-Véanse railcast: gems with bundler y el blog polishing rubies
-bundle gem nombre
-2.- Partiendo de la implementación que se ha realizado en prácticas anteriores para las Fracciones y las Matrices reorganizar el código.
-3.- Escribir un conjunto de pruebas unitarias (Unit Testing)
-test/tc_nombre.rb
-4.- Escribir un fichero de espectativas de comportamiento (TDD)
-spec/nombre_spec.rb
-5.- Realizar un seguimiento continuo de las pruebas (Continuous Testing)
-guard
-6.- Comprobar el correcto funcionamiento en distintas plataformas (Continuous Integration)
-travis
-7.- Indique la URL del repositorio en el que se ha desarrollado.
+La distribucion de la practica ha sido crear una clase Matriz en la que tendremos un numero de filas, un numero de columnas y tambien, un vector con las posiciones.
+
+Para la matriz densa realizaremos la representacion normal, como hemos realizado en la practica anterior. Por su parte, la matriz dispersa la crearemos a partir de un array que contiene un Hash por fila. 
+
+Con respecto a las operaciones de las matrices, las realizaremos de forma normal. Asi, partiremos siempre de matrices densas, y una vez obtenido el resultado, si este es superior al 60%, se creara por defecto la matriz dispersa. En otro caso, se quedara como densa.
+
+Las funciones de maximo y minimo para la matriz dispersa no la hemos realizado porque no hemos sabido interpretar como buscar en una tabla hash el valor del contenido. Asi mismo, a la hora de realizar el 'git push' tenemos el problema de que no nos deja subirlo porque da la autentificacion como fallida.
