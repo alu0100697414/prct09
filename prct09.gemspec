@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Prct09::VERSION
   spec.authors       = ["Jose Angel Concepcion"]
   spec.email         = ["alu0100697414@ull.edu.es"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Gema de la practica 9-10}
+  spec.summary       = %q{Creada la gema utilizada para esta practica}
   spec.homepage      = ""
   spec.license       = "MIT"
 
