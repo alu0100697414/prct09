@@ -1,4 +1,4 @@
-require "./lib/pract09.rb"
+require "./lib/prct09.rb"
 
 describe Prct09::Matriz_Densa do
 
@@ -61,9 +61,16 @@ describe Prct09::Matriz_Densa do
 
                 (@m1*@m2).to_s.should eq(@m3.to_s)
         end
+     end
+     describe " # Operaciones de max y min " do
+        it " # Debe poderse hallar el maximo de una matriz" do
+                @m1.max.should == 4
+        end
+        it " # Debe poderse hallar el minimo de una matriz" do
+                @m1.min.should == 1
+        end
     end
 end
-
 
 describe Prct09::Matriz_Dispersa do
 
@@ -162,5 +169,5 @@ describe Prct09::Matriz_Dispersa do
 
     end
 end
-                                                                                                                           150,1-8     Final
+
 
