@@ -1,5 +1,5 @@
-require 'matriz.rb'
-require 'matriz_densa.rb'
+require "./lib/prct09/matriz.rb"
+require "./lib/prct09/matriz_densa.rb"
 
 module Prct09
   class Matriz_Dispersa < Matriz
@@ -150,37 +150,6 @@ def +(other)
     end
     c
     end
-
-#Metodo Comparacion
-    def <=>(other)
-	cont =0
-        
-	for i in 0 ... @filas
-	  for j in 0 ... @columnas  
-	     if((pos[i][j] != nil)&&(other.pos[i][j]!=nil))
-	         cont=cont+(pos[i][j] <=> other.pos[i][j])
-	     elsif((pos[i][j]!=nil)&&(other.pos[i][j]==nil))
-	         if(pos[i][j]<0)
-	            cont=cont-1
-	         else
-	            cont=cont+1
-	         end
-	     elsif ((pos[i][j]==nil)&&(other.pos[i][j]!=nil))
-		 if(other.pos[i][j]>0)
-                    cont=cont-1
-                 else
-                    cont=cont+1
-                 end
-	     end	
-	end	
-    end   
-     if cont > 0
-	cont = 1
-     elsif
-	cont = -1  
-    end
-  cont 
-  end        
  
  end
 end

@@ -15,3 +15,5 @@ module Prct09
           "#{@num}/#{@den}"
       end
 
+end
+end

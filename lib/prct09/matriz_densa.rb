@@ -116,23 +116,39 @@ module Prct09
 
 
 #Metodo Comparacion
-    def <=>(other)
-        cont =0
+#Busqueda del maximo
+    def max
+        m = get(0,0)
+        i = 0
+        while(i < @filas)
+                j = 0
+                while(j < @columnas)
+                        if (get(i,j) > m)
+                                m = get(i,j)
+                        end
+                        j += 1
+                end
+                i += 1
+        end
+        m
+    end
 
-        for i in 0 ... @filas
-          for j in 0 ... @columnas
-                      cont=cont+(pos[i][j] <=> other.pos[i][j])
-            end
-	 end
-        if cont > 0
-        cont = 1
-     	elsif
-        cont = -1
-    	end
-	cont
-       end
-
-
-
-  end
+#Busqueda del minimo
+    def min
+        m = get(0,0)
+        i = 0
+        while(i < @filas)
+                j = 0
+                while(j < @columnas)
+                        if (get(i,j) < m)
+                                m = get(i,j)
+                        end
+                        j += 1
+                end
+                i += 1
+        end
+        m
+    end
+ 
+ end
 end
