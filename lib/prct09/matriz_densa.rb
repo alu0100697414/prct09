@@ -113,5 +113,26 @@ module Prct09
         end
         c
     end
+
+
+#Metodo Comparacion
+    def <=>(other)
+        cont =0
+
+        for i in 0 ... @filas
+          for j in 0 ... @columnas
+                      cont=cont+(pos[i][j] <=> other.pos[i][j])
+            end
+	 end
+        if cont > 0
+        cont = 1
+     	elsif
+        cont = -1
+    	end
+	cont
+       end
+
+
+
   end
 end
