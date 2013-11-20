@@ -87,3 +87,102 @@ def to_s
       output
     end
 
+#Metodo Suma
+
+def +(other)
+      c = Matriz_Densa.new(@filas, @columnas)
+      i = 0
+      while(i < @filas)
+        j = 0
+        while(j < @columnas)
+          c.set(i, j, get(i,j) + other.get(i,j))
+          j += 1
+        end
+      i += 1
+      end
+
+      if(c.num_nulos > 0.6)
+        c = Matriz_Dispersa.copy(c)
+      end
+      c
+    end
+
+#Metodo Resta
+
+    def -(other)
+      c = Matriz_Densa.new(@filas, @columnas)
+      i = 0
+      while(i < @filas)
+        j = 0
+        while(j < @columnas)
+          c.set(i, j, get(i,j) - other.get(i,j))
+          j += 1
+        end
+        i += 1
+      end
+
+      if(c.num_nulos > 0.6)
+        c = Matriz_Dispersa.copy(c)
+      end
+      c
+    end
+
+#Metodo Multiplicacion
+
+    def *(other)
+      c = Matriz_Densa.new(@filas, other.columnas)
+      i = 0
+      while(i < @filas)
+        j = 0
+        while(j < other.columnas)
+        k = 0
+        while(k < @columnas)
+          c.set(i, j, get(i, k) * other.get(k,j) + c.get(i,j))
+          k += 1
+        end
+        j += 1
+      end
+      i += 1
+    end 
+
+    if(c.num_nulos > 0.6)
+      c = Matriz_Dispersa.copy(c)
+    end
+    c
+    end
+
+#Metodo Comparacion
+    def <=>(other)
+	cont =0
+        
+	for i in 0 ... @filas
+	  for j in 0 ... @columnas  
+	     if((pos[i][j] != nil)&&(other.pos[i][j]!=nil))
+	         cont=cont+(pos[i][j] <=> other.pos[i][j])
+	     elsif((pos[i][j]!=nil)&&(other.pos[i][j]==nil))
+	         if(pos[i][j]<0)
+	            cont=cont-1
+	         else
+	            cont=cont+1
+	         end
+	     elsif ((pos[i][j]==nil)&&(other.pos[i][j]!=nil))
+		 if(other.pos[i][j]>0)
+                    cont=cont-1
+                 else
+                    cont=cont+1
+                 end
+	     end	
+	end	
+    end   
+     if cont > 0
+	cont = 1
+     elsif
+	cont = -1  
+    end
+  cont 
+  end        
+ 
+ end
+end
+
+
